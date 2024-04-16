@@ -38,7 +38,8 @@ export const ImagesSlider = ({
 
 	useEffect(() => {
 		loadImages()
-	})
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
 	const loadImages = () => {
 		setLoading(true)
@@ -59,16 +60,6 @@ export const ImagesSlider = ({
 			.catch((error) => console.error('Failed to load images', error))
 	}
 	useEffect(() => {
-		const handleKeyDown = (event: KeyboardEvent) => {
-			if (event.key === 'ArrowRight') {
-				handleNext()
-			} else if (event.key === 'ArrowLeft') {
-				handlePrevious()
-			}
-		}
-
-		window.addEventListener('keydown', handleKeyDown)
-
 		// autoplay
 		let interval: any
 		if (autoplay) {
@@ -78,13 +69,12 @@ export const ImagesSlider = ({
 		}
 
 		return () => {
-			window.removeEventListener('keydown', handleKeyDown)
 			clearInterval(interval)
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
-	const slideVariants = {
+	/* const slideVariants = {
 		initial: {
 			scale: 0,
 			opacity: 0,
@@ -104,6 +94,36 @@ export const ImagesSlider = ({
 			x: '-150%',
 			transition: {
 				duration: 1,
+			},
+		},
+		downExit: {
+			opacity: 1,
+			x: '150%',
+			transition: {
+				duration: 1,
+			},
+		},
+	} */
+
+	const slideVariants = {
+		initial: {
+			opacity: 0,
+			x: '100%',
+		},
+		visible: {
+			x: '0%',
+			opacity: 1,
+			transition: {
+				duration: 1,
+				ease: [0.645, 0.045, 0.355, 1.0],
+			},
+		},
+		upExit: {
+			opacity: 1,
+			x: '-100%',
+			transition: {
+				duration: 1,
+				ease: [0.645, 0.045, 0.355, 1.0],
 			},
 		},
 		downExit: {

@@ -9,6 +9,7 @@ export default function Home() {
 		<ImagesSlider
 			className="h-full"
 			images={images}
+			direction="up"
 		>
 			<motion.div
 				initial={{
