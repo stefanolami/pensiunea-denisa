@@ -7,18 +7,18 @@ export default function Home() {
 	const images = ['/pic2.jpg', '/pic1.jpg', 'pic3.jpg']
 	return (
 		<ImagesSlider
-			className="h-full"
+			className="h-[100svh] xl:h-[100vh]"
 			images={images}
 			direction="up"
 		>
 			<motion.div
 				initial={{
 					opacity: 0,
-					y: -80,
+					/* y: -80, */
 				}}
 				animate={{
 					opacity: 1,
-					y: 0,
+					/* y: 0, */
 				}}
 				transition={{
 					duration: 0.6,

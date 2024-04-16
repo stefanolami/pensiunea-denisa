@@ -119,7 +119,7 @@ export const ImagesSlider = ({
 			},
 		},
 		upExit: {
-			opacity: 1,
+			opacity: 0,
 			x: '-100%',
 			transition: {
 				duration: 1,
