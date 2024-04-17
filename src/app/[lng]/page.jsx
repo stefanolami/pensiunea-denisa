@@ -6,7 +6,7 @@ export default async function Home({ params: { lng } }) {
 	return (
 		<>
 			<HomeHero />
-			<div className="bg-black h-[1000px] text-white pt-10 text-center">
+			<div className="bg-black h-96 text-white pt-10 text-center">
 				{t('home')}
 			</div>
 		</>

@@ -1,6 +1,8 @@
 import { Inter } from 'next/font/google'
 import '../globals.css'
+
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 import { dir } from 'i18next'
 import { languages } from '@/app/i18n/settings'
@@ -26,6 +28,7 @@ export default function RootLayout({ children, params: { lng } }) {
 				<main className="w-full">
 					<Header lng={lng} />
 					{children}
+					<Footer lng={lng} />
 				</main>
 			</body>
 		</html>
