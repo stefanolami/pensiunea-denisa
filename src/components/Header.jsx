@@ -3,11 +3,13 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
+import { useTranslation } from '../app/i18n/client'
 
 import MobileMenu from './sub/MobileMenu'
 import DesktopMenu from './sub/DesktopMenu'
 
 export default function Header({ lng }) {
+	const { t } = useTranslation(lng, 'header')
 	const { scrollY } = useScroll()
 
 	const [hidden, setHidden] = useState(false)
@@ -35,7 +37,7 @@ export default function Header({ lng }) {
 				className="pl-6 md:pl-0"
 				href="/"
 			>
-				LOGO
+				{t('logo')}
 			</Link>
 			<div className="flex items-center justify-end">
 				<DesktopMenu lng={lng} />
