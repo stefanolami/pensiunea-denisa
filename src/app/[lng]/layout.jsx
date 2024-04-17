@@ -1,11 +1,11 @@
 import { Inter } from 'next/font/google'
-import { dir } from 'i18next'
 import '../globals.css'
 import Header from '@/components/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+import { dir } from 'i18next'
+import { languages } from '@/app/i18n/settings'
 
-const languages = ['ro', 'en']
+const inter = Inter({ subsets: ['latin'] })
 
 export async function generateStaticParams() {
 	return languages.map((lng) => ({ lng }))

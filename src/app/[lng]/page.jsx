@@ -3,7 +3,7 @@ import { ImagesSlider } from '@/components/ui/images-slider'
 import { motion } from 'framer-motion'
 
 export default function Home({ params: { lng } }) {
-	const images = ['/pic2.jpg', '/pic1.jpg', 'pic3.jpg']
+	const images = ['/pic2.jpg', '/pic1.jpg', '/pic3.jpg']
 	return (
 		<>
 			<ImagesSlider
