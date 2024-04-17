@@ -7,7 +7,7 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import MobileMenu from './sub/MobileMenu'
 import DesktopMenu from './sub/DesktopMenu'
 
-export default function Header() {
+export default function Header({ lng }) {
 	const { scrollY } = useScroll()
 
 	const [hidden, setHidden] = useState(false)
@@ -38,8 +38,8 @@ export default function Header() {
 				LOGO
 			</Link>
 			<div className="flex items-center justify-end">
-				<DesktopMenu />
-				<MobileMenu />
+				<DesktopMenu lng={lng} />
+				<MobileMenu lng={lng} />
 			</div>
 		</motion.header>
 	)

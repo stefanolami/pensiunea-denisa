@@ -24,7 +24,7 @@ export default function RootLayout({ children, params: { lng } }) {
 		>
 			<body className={inter.className}>
 				<main className="w-full">
-					<Header />
+					<Header lng={lng} />
 					{children}
 				</main>
 			</body>
