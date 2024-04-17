@@ -1,3 +1,6 @@
-export default function About({ params: { lng } }) {
-	return <h1>About {lng}</h1>
+import { useTranslation } from '../../i18n'
+
+export default async function About({ params: { lng } }) {
+	const { t } = await useTranslation(lng, 'about')
+	return <h1>{t('about')}</h1>
 }
