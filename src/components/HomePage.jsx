@@ -1,9 +1,8 @@
 'use client'
 import { ImagesSlider } from '@/components/ui/images-slider'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
-export default function Home() {
+export default function HomePage({ children }) {
 	const images = ['/pic2.jpg', '/pic1.jpg', 'pic3.jpg']
 	return (
 		<>
@@ -35,7 +34,7 @@ export default function Home() {
 				</button> */}
 				</motion.div>
 			</ImagesSlider>
-			<div className="bg-black h-[1000px]"></div>
+			{children}
 		</>
 	)
 }
