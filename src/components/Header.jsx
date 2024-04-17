@@ -35,13 +35,19 @@ export default function Header({ lng }) {
 		>
 			<Link
 				className="pl-6 md:pl-0"
-				href="/"
+				href={`/${lng}`}
 			>
 				{t('logo')}
 			</Link>
 			<div className="flex items-center justify-end">
-				<DesktopMenu lng={lng} />
-				<MobileMenu lng={lng} />
+				<DesktopMenu
+					t={t}
+					lng={lng}
+				/>
+				<MobileMenu
+					t={t}
+					lng={lng}
+				/>
 			</div>
 		</motion.header>
 	)

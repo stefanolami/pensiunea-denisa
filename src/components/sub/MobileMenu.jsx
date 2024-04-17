@@ -3,8 +3,9 @@
 import { motion, MotionConfig } from 'framer-motion'
 import { useState } from 'react'
 import Link from 'next/link'
+import LangSwitcherMobile from './LangSwitcherMobile'
 
-export default function MobileMenu() {
+export default function MobileMenu({ lng }) {
 	const [active, setActive] = useState(false)
 	return (
 		<div className="md:hidden">
@@ -79,8 +80,8 @@ export default function MobileMenu() {
 					/>
 				</motion.button>
 				<motion.div>
-					<motion.nav
-						className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur flex flex-col gap-4 justify-center items-center"
+					<motion.div
+						className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur flex flex-col justify-around items-center"
 						initial={false}
 						animate={active ? 'open' : 'closed'}
 						variants={{
@@ -94,12 +95,15 @@ export default function MobileMenu() {
 							},
 						}}
 					>
-						<Link href="/about">About Us</Link>
-						<Link href="/prices">Prices</Link>
-						<Link href="/deals">Deals</Link>
-						<Link href="/gallery">Gallery</Link>
-						<Link href="/contact">Contact</Link>
-					</motion.nav>
+						<nav className="flex flex-col justify-center gap-4 items-center">
+							<Link href="/about">About Us</Link>
+							<Link href="/prices">Prices</Link>
+							<Link href="/deals">Deals</Link>
+							<Link href="/gallery">Gallery</Link>
+							<Link href="/contact">Contact</Link>
+						</nav>
+						<LangSwitcherMobile lng={lng} />
+					</motion.div>
 				</motion.div>
 			</MotionConfig>
 		</div>
